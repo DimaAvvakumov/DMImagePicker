@@ -83,6 +83,13 @@
     [self resetScaleAnimated:NO];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self recalculateScale];
+    [self resetScaleAnimated:NO];
+}
+
 - (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
     [self recalculateScale];

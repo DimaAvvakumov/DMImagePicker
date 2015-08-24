@@ -21,26 +21,26 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 UIImage* DMImagePickerImageRotate(UIImage* image) {
     
-    CGSize size = CGSizeMake(image.size.height, image.size.width);
+    // CGSize size = CGSizeMake(image.size.height, image.size.width);
     UIImageOrientation orientation = image.imageOrientation;
-    // CGSize size = CGSizeMake(image.size.width, image.size.height);
+    CGSize size = CGSizeMake(image.size.width, image.size.height);
     UIGraphicsBeginImageContext(size);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextTranslateCTM( context, 0.5f * image.size.height, 0.5f * image.size.width ) ;
-    
-    if (orientation == UIImageOrientationRight) {
-        CGContextRotateCTM (context, - M_PI_2);
-    } else if (orientation == UIImageOrientationLeft) {
-        CGContextRotateCTM (context, M_PI_2);
-    } else if (orientation == UIImageOrientationDown) {
-        return image;
-    } else if (orientation == UIImageOrientationUp) {
-        CGContextRotateCTM (context, M_PI);
-    }
-
-    CGContextTranslateCTM( context, - 0.5f * image.size.width, - 0.5f * image.size.height ) ;
+//    CGContextTranslateCTM( context, 0.5f * image.size.height, 0.5f * image.size.width ) ;
+//    
+//    if (orientation == UIImageOrientationRight) {
+//        CGContextRotateCTM (context, - M_PI_2);
+//    } else if (orientation == UIImageOrientationLeft) {
+//        CGContextRotateCTM (context, M_PI_2);
+//    } else if (orientation == UIImageOrientationDown) {
+//        return image;
+//    } else if (orientation == UIImageOrientationUp) {
+//        CGContextRotateCTM (context, M_PI);
+//    }
+//
+//    CGContextTranslateCTM( context, - 0.5f * image.size.width, - 0.5f * image.size.height ) ;
     
     // CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
     

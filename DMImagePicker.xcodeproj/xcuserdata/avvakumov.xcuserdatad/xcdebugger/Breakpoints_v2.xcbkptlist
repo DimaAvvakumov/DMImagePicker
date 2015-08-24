@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DMImagePicker/DMImagePicker.m"
-            timestampString = "462134046.252372"
+            filePath = "DMImagePicker/core/DMImageEditViewController.m"
+            timestampString = "462134385.538742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "500"
-            endingLineNumber = "500"
-            landmarkName = "-snapStillImage:"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "-setupImage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DMImagePicker/core/DMImageEditViewController.m"
-            timestampString = "462132148.281841"
+            filePath = "DMImagePicker/DMImagePicker.m"
+            timestampString = "462134212.790437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-setupImage:"
+            startingLineNumber = "502"
+            endingLineNumber = "502"
+            landmarkName = "-snapStillImage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
