@@ -24,17 +24,21 @@ UIImage* DMImagePickerImageRotate(UIImage* src, UIImageOrientation orientation) 
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
+    CGContextTranslateCTM( context, 0.5f * src.size.width, 0.5f * src.size.height ) ;
+    
     if (orientation == UIImageOrientationRight) {
-        CGContextRotateCTM (context, M_PI_2);
+        CGContextRotateCTM (context, - 0.1 * M_PI_2);
     } else if (orientation == UIImageOrientationLeft) {
-        CGContextRotateCTM (context, M_PI_2);
+        CGContextRotateCTM (context, 0.1 * M_PI_2);
     } else if (orientation == UIImageOrientationDown) {
         // NOTHING
     } else if (orientation == UIImageOrientationUp) {
-        CGContextRotateCTM (context, M_PI);
+        CGContextRotateCTM (context, 0.1 * M_PI);
     }
     
     CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
+    
+    CGContextTranslateCTM( context, - 0.5f * src.size.width, - 0.5f * src.size.height ) ;
     
     // [src drawAtPoint:CGPointMake(0, 0)];
     
