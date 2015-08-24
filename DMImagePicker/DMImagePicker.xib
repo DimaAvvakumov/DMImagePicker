@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMImagePicker">
+            <connections>
+                <outlet property="cancelButton" destination="0sp-hJ-KzO" id="WHc-sG-Cfc"/>
+                <outlet property="previewView" destination="gfa-a6-EQn" id="Il9-V9-1fL"/>
+                <outlet property="shotButton" destination="9ab-x1-7qi" id="lS7-V9-mjH"/>
+                <outlet property="swapButton" destination="lrQ-NG-8gn" id="LC2-Fw-Z2o"/>
+                <outlet property="view" destination="xGc-aC-G9J" id="if9-tg-3uZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="xGc-aC-G9J">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cL-94-rEh" userLabel="View - Top panel">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrQ-NG-8gn">
+                            <rect key="frame" x="273" y="0.0" width="37" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Swap"/>
+                            <connections>
+                                <action selector="changeCamera:" destination="-1" eventType="touchUpInside" id="dGi-wY-Qho"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="lrQ-NG-8gn" firstAttribute="top" secondItem="8cL-94-rEh" secondAttribute="top" id="1bM-rL-bfo"/>
+                        <constraint firstAttribute="bottom" secondItem="lrQ-NG-8gn" secondAttribute="bottom" id="BrN-gO-C6y"/>
+                        <constraint firstAttribute="trailing" secondItem="lrQ-NG-8gn" secondAttribute="trailing" constant="10" id="U4K-jV-4Iy"/>
+                        <constraint firstAttribute="height" constant="40" id="dDQ-1G-WTn"/>
+                    </constraints>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfa-a6-EQn" userLabel="View - Preview" customClass="DMImagePickerPreviewView">
+                    <rect key="frame" x="0.0" y="40" width="320" height="464"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Ddl-0y-1Qg" appends="YES" id="Ais-Hw-KMG"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaY-as-6E2" userLabel="View - Bottom panel">
+                    <rect key="frame" x="0.0" y="504" width="320" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sp-hJ-KzO" userLabel="Button - Cancel">
+                            <rect key="frame" x="10" y="17" width="50" height="31"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="dcD-sf-TsK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ab-x1-7qi" userLabel="Button - Shot">
+                            <rect key="frame" x="138" y="10" width="44" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="nJI-e7-msl"/>
+                                <constraint firstAttribute="width" constant="44" id="woP-4C-uYA"/>
+                            </constraints>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="snapStillImage:" destination="-1" eventType="touchUpInside" id="XHM-Ih-sLs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="9ab-x1-7qi" secondAttribute="centerY" id="2S5-vW-AyW"/>
+                        <constraint firstAttribute="centerX" secondItem="9ab-x1-7qi" secondAttribute="centerX" id="IIv-pK-HDW"/>
+                        <constraint firstItem="0sp-hJ-KzO" firstAttribute="leading" secondItem="GaY-as-6E2" secondAttribute="leading" constant="10" id="NST-pV-rF1"/>
+                        <constraint firstAttribute="height" constant="64" id="TtK-1u-plA"/>
+                        <constraint firstAttribute="centerY" secondItem="0sp-hJ-KzO" secondAttribute="centerY" id="eX2-2A-fKi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GaY-as-6E2" secondAttribute="bottom" id="3yc-Fs-Ift"/>
+                <constraint firstItem="gfa-a6-EQn" firstAttribute="leading" secondItem="xGc-aC-G9J" secondAttribute="leading" id="5EU-9x-ckq"/>
+                <constraint firstItem="8cL-94-rEh" firstAttribute="leading" secondItem="xGc-aC-G9J" secondAttribute="leading" id="Csj-Ea-FXO"/>
+                <constraint firstItem="GaY-as-6E2" firstAttribute="top" secondItem="gfa-a6-EQn" secondAttribute="bottom" id="HLv-cW-xpg"/>
+                <constraint firstItem="gfa-a6-EQn" firstAttribute="top" secondItem="8cL-94-rEh" secondAttribute="bottom" id="Ie1-YP-KSb"/>
+                <constraint firstAttribute="trailing" secondItem="8cL-94-rEh" secondAttribute="trailing" id="UT5-NO-RXj"/>
+                <constraint firstAttribute="trailing" secondItem="gfa-a6-EQn" secondAttribute="trailing" id="cRU-yE-vbJ"/>
+                <constraint firstAttribute="trailing" secondItem="GaY-as-6E2" secondAttribute="trailing" id="kK1-HV-I5f"/>
+                <constraint firstItem="8cL-94-rEh" firstAttribute="top" secondItem="xGc-aC-G9J" secondAttribute="top" id="mZW-Oi-GVr"/>
+                <constraint firstItem="GaY-as-6E2" firstAttribute="leading" secondItem="xGc-aC-G9J" secondAttribute="leading" id="tNm-Yn-Ogx"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="547" y="505"/>
+        </view>
+        <tapGestureRecognizer id="Ddl-0y-1Qg">
+            <connections>
+                <action selector="focusAndExposeTap:" destination="-1" id="mLV-CW-cyp"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
