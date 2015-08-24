@@ -41,6 +41,8 @@
 }
 
 - (void)dmImagePicker:(DMImagePicker *)picker takeImage:(UIImage *)image {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
     NSLog(@"image: %@", image);
     NSLog(@"image orient: %d", image.imageOrientation);
 }

@@ -19,32 +19,63 @@ static void * CapturingStillImageContext = &CapturingStillImageContext;
 static void * RecordingContext = &RecordingContext;
 static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDeviceAuthorizedContext;
 
-UIImage* DMImagePickerImageRotate(UIImage* src, UIImageOrientation orientation) {
-    UIGraphicsBeginImageContext(src.size);
+UIImage* DMImagePickerImageRotate(UIImage* image) {
+    
+    CGSize size = CGSizeMake(image.size.height, image.size.width);
+    UIImageOrientation orientation = image.imageOrientation;
+    // CGSize size = CGSizeMake(image.size.width, image.size.height);
+    UIGraphicsBeginImageContext(size);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextTranslateCTM( context, 0.5f * src.size.width, 0.5f * src.size.height ) ;
+    CGContextTranslateCTM( context, 0.5f * image.size.height, 0.5f * image.size.width ) ;
     
     if (orientation == UIImageOrientationRight) {
-        CGContextRotateCTM (context, - 0.1 * M_PI_2);
+        CGContextRotateCTM (context, - M_PI_2);
     } else if (orientation == UIImageOrientationLeft) {
-        CGContextRotateCTM (context, 0.1 * M_PI_2);
+        CGContextRotateCTM (context, M_PI_2);
     } else if (orientation == UIImageOrientationDown) {
-        // NOTHING
+        return image;
     } else if (orientation == UIImageOrientationUp) {
-        CGContextRotateCTM (context, 0.1 * M_PI);
+        CGContextRotateCTM (context, M_PI);
     }
+
+    CGContextTranslateCTM( context, - 0.5f * image.size.width, - 0.5f * image.size.height ) ;
     
-    CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
+    // CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
     
-    CGContextTranslateCTM( context, - 0.5f * src.size.width, - 0.5f * src.size.height ) ;
+    [image drawAtPoint:CGPointMake(0, 0)];
     
-    // [src drawAtPoint:CGPointMake(0, 0)];
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *rotatedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return image;
+
+    return rotatedImage;
+    
+//    UIGraphicsBeginImageContext(src.size);
+//    
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    
+//    CGContextTranslateCTM( context, 0.5f * src.size.width, 0.5f * src.size.height ) ;
+//    
+//    if (orientation == UIImageOrientationRight) {
+//        CGContextRotateCTM (context, - 0.1 * M_PI_2);
+//    } else if (orientation == UIImageOrientationLeft) {
+//        CGContextRotateCTM (context, 0.1 * M_PI_2);
+//    } else if (orientation == UIImageOrientationDown) {
+//        // NOTHING
+//    } else if (orientation == UIImageOrientationUp) {
+//        CGContextRotateCTM (context, 0.1 * M_PI);
+//    }
+//    
+//    CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
+//    
+//    CGContextTranslateCTM( context, - 0.5f * src.size.width, - 0.5f * src.size.height ) ;
+//    
+//    // [src drawAtPoint:CGPointMake(0, 0)];
+//    
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return image;
 }
 
 
@@ -466,9 +497,9 @@ UIImage* DMImagePickerImageRotate(UIImage* src, UIImageOrientation orientation) 
                 
                 NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
-                // UIImage *rotadedImage = DMImagePickerImageRotate(image, image.imageOrientation);
+                UIImage *rotadedImage = DMImagePickerImageRotate(image);
                 
-                [strongSelf afterSnapStillImage:image];
+                [strongSelf afterSnapStillImage:rotadedImage];
             }
         }];
     });
