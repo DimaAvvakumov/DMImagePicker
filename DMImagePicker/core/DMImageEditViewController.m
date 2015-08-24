@@ -222,7 +222,7 @@
             //                }
             //            }
             
-            [self setMaketToScale:zoomScale animated:NO];
+            [self setMaketToScale:zoomScale animated:YES];
             
             break;
         }
@@ -245,12 +245,12 @@
     
     //    float newScale = _renderScale + (scale - 1.0);
     
-    if (newScale < _minScale) {
-        newScale = _minScale;
-    }
-    if (newScale > _maxScale) {
-        newScale = _maxScale;
-    }
+//    if (newScale < _minScale) {
+//        newScale = _minScale;
+//    }
+//    if (newScale > _maxScale) {
+//        newScale = _maxScale;
+//    }
     
     return newScale;
 }
@@ -448,9 +448,9 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextTranslateCTM( context, 0.5f * size.width, 0.5f * size.height ) ;
-    CGContextRotateCTM (context, M_PI_2);
-    CGContextTranslateCTM( context, - 0.5f * size.width, - 0.5f * size.height ) ;
+//    CGContextTranslateCTM( context, 0.5f * size.width, 0.5f * size.height ) ;
+//    CGContextRotateCTM (context, M_PI_2);
+//    CGContextTranslateCTM( context, - 0.5f * size.width, - 0.5f * size.height ) ;
     
     // CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
     
