@@ -432,6 +432,7 @@
     self.storeImageSize = image.size;
     
     [self buildView];
+    [self recalculateScale];
     [self resetScaleAnimated:NO];
 }
 
@@ -444,10 +445,6 @@
 #pragma mark - Helper actions
 
 - (UIImage *)rotateImage:(UIImage *)image {
-//    UIImageOrientation i = image.imageOrientation + 1;
-//    if (i > 4) i = 1;
-//    
-//    return [[UIImage alloc] initWithCGImage:image.CGImage scale:image.scale orientation:i];
     
     CGSize size = CGSizeMake(image.size.height, image.size.width);
     // CGSize size = CGSizeMake(image.size.width, image.size.height);
@@ -456,7 +453,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextTranslateCTM( context, 0.5f * image.size.height, 0.5f * image.size.width ) ;
-    CGContextRotateCTM (context, M_PI_2);
+    CGContextRotateCTM (context, - M_PI_2);
     CGContextTranslateCTM( context, - 0.5f * image.size.width, - 0.5f * image.size.height ) ;
     
     // CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
