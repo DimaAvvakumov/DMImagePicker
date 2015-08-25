@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1811158C1B8CD753000A0980 /* DMImageEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E6D1B8B1C3300030821 /* DMImageEditViewController.xib */; };
-		1811158D1B8CD753000A0980 /* DMImagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E651B8AFBCD00030821 /* DMImagePicker.xib */; };
-		1811158E1B8CD76D000A0980 /* DMImagePickerBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 181115851B8CD72E000A0980 /* DMImagePickerBundle.bundle */; };
 		18FA2E3E1B8AEE0800030821 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E3D1B8AEE0800030821 /* main.m */; };
 		18FA2E411B8AEE0800030821 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E401B8AEE0800030821 /* AppDelegate.m */; };
 		18FA2E441B8AEE0800030821 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E431B8AEE0800030821 /* ViewController.m */; };
@@ -21,18 +18,7 @@
 		18FA2E6E1B8B1C3300030821 /* DMImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E6C1B8B1C3300030821 /* DMImageEditViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1811158F1B8CD772000A0980 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18FA2E301B8AEE0800030821 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 181115841B8CD72E000A0980;
-			remoteInfo = DMImagePickerBundle;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		181115851B8CD72E000A0980 /* DMImagePickerBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMImagePickerBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		181115881B8CD72E000A0980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18FA2E381B8AEE0800030821 /* DMImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FA2E3C1B8AEE0800030821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,13 +43,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		181115821B8CD72E000A0980 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18FA2E351B8AEE0800030821 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				18FA2E381B8AEE0800030821 /* DMImagePicker.app */,
-				181115851B8CD72E000A0980 /* DMImagePickerBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,23 +155,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		181115841B8CD72E000A0980 /* DMImagePickerBundle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 181115891B8CD72E000A0980 /* Build configuration list for PBXNativeTarget "DMImagePickerBundle" */;
-			buildPhases = (
-				181115811B8CD72E000A0980 /* Sources */,
-				181115821B8CD72E000A0980 /* Frameworks */,
-				181115831B8CD72E000A0980 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DMImagePickerBundle;
-			productName = DMImagePickerBundle;
-			productReference = 181115851B8CD72E000A0980 /* DMImagePickerBundle.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
 		18FA2E371B8AEE0800030821 /* DMImagePicker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18FA2E5B1B8AEE0800030821 /* Build configuration list for PBXNativeTarget "DMImagePicker" */;
@@ -205,7 +166,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				181115901B8CD772000A0980 /* PBXTargetDependency */,
 			);
 			name = DMImagePicker;
 			productName = DMImagePicker;
@@ -221,9 +181,6 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Avvakumov Dmitry";
 				TargetAttributes = {
-					181115841B8CD72E000A0980 = {
-						CreatedOnToolsVersion = 6.4;
-					};
 					18FA2E371B8AEE0800030821 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = QKNV954376;
@@ -244,26 +201,15 @@
 			projectRoot = "";
 			targets = (
 				18FA2E371B8AEE0800030821 /* DMImagePicker */,
-				181115841B8CD72E000A0980 /* DMImagePickerBundle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		181115831B8CD72E000A0980 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1811158C1B8CD753000A0980 /* DMImageEditViewController.xib in Resources */,
-				1811158D1B8CD753000A0980 /* DMImagePicker.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18FA2E361B8AEE0800030821 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1811158E1B8CD76D000A0980 /* DMImagePickerBundle.bundle in Resources */,
 				18FA2E471B8AEE0800030821 /* Main.storyboard in Resources */,
 				18FA2E4C1B8AEE0800030821 /* LaunchScreen.xib in Resources */,
 				18FA2E491B8AEE0800030821 /* Images.xcassets in Resources */,
@@ -273,13 +219,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		181115811B8CD72E000A0980 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18FA2E341B8AEE0800030821 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,14 +233,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		181115901B8CD772000A0980 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 181115841B8CD72E000A0980 /* DMImagePickerBundle */;
-			targetProxy = 1811158F1B8CD772000A0980 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		18FA2E451B8AEE0800030821 /* Main.storyboard */ = {
@@ -323,39 +254,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1811158A1B8CD72E000A0980 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DMImagePickerBundle/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		1811158B1B8CD72E000A0980 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DMImagePickerBundle/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		18FA2E591B8AEE0800030821 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -465,15 +363,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		181115891B8CD72E000A0980 /* Build configuration list for PBXNativeTarget "DMImagePickerBundle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1811158A1B8CD72E000A0980 /* Debug */,
-				1811158B1B8CD72E000A0980 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		18FA2E331B8AEE0800030821 /* Build configuration list for PBXProject "DMImagePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
