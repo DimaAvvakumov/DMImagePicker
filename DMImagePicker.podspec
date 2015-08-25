@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.author       = { "Dmitry Avvakumov" => "avvakumov@it-baker.ru" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/DimaAvvakumov/DMPopupAlert.git", :tag => "0.0.2" }
-  s.source_files = "DMImagePicker", "DMImagePicker/*.{h,m}"
-  s.public_header_files = "DMImagePicker/**/*.{h,m}"
+  s.source_files = "DMImagePicker", "DMImagePicker/**/*.{h,m}"
+  s.public_header_files = "DMImagePicker/*.{h,m}"
   s.framework    = "UIKit"
   s.requires_arc = true
   s.resources    = 'DMImagePicker/DMImagePickerBundle.bundle'
