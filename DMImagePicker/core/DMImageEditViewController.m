@@ -30,10 +30,10 @@
 #pragma mark - Init methods
 
 - (id)init {
-    NSURL *bundlePath = [[NSBundle bundleForClass:[self class]] URLForResource:@"DMImagePickerBundle" withExtension:@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithURL:bundlePath];
+//    NSURL *bundlePath = [[NSBundle bundleForClass:[self class]] URLForResource:@"DMImagePickerBundle" withExtension:@"bundle"];
+//    NSBundle *bundle = [NSBundle bundleWithURL:bundlePath];
     
-    self = [super initWithNibName:@"DMImageEditViewController" bundle:bundle];
+    self = [super initWithNibName:@"DMImageEditViewController" bundle:nil];
     if (self == nil) return nil;
     
     // init controller
@@ -53,10 +53,10 @@
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    NSURL *bundlePath = [[NSBundle bundleForClass:[self class]] URLForResource:@"DMImagePickerBundle" withExtension:@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithURL:bundlePath];
+//    NSURL *bundlePath = [[NSBundle bundleForClass:[self class]] URLForResource:@"DMImagePickerBundle" withExtension:@"bundle"];
+//    NSBundle *bundle = [NSBundle bundleWithURL:bundlePath];
     
-    self = [super initWithNibName:nibNameOrNil bundle:bundle];
+    self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self == nil) return nil;
     
     // init controller
