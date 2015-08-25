@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>DMImagePickerBundle.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>181115841B8CD72E000A0980</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>18FA2E371B8AEE0800030821</key>
 		<dict>
 			<key>primary</key>

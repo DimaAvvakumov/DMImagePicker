@@ -109,7 +109,10 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
 #pragma mark - Init methods
 
 - (id)init {
-    self = [super initWithNibName:@"DMImagePicker" bundle:nil];
+    NSURL *bundlePath = [[NSBundle bundleForClass:[self class]] URLForResource:@"DMImagePickerBundle" withExtension:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithURL:bundlePath];
+    
+    self = [super initWithNibName:@"DMImagePicker" bundle:bundle];
     if (self == nil) return nil;
     
     // init controller
@@ -129,7 +132,10 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    NSURL *bundlePath = [[NSBundle bundleForClass:[self class]] URLForResource:@"DMImagePickerBundle" withExtension:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithURL:bundlePath];
+    
+    self = [super initWithNibName:nibNameOrNil bundle:bundle];
     if (self == nil) return nil;
     
     // init controller

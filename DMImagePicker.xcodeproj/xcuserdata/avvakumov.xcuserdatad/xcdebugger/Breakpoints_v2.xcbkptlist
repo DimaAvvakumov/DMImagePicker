@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DMImagePicker/core/DMImageEditViewController.m"
-            timestampString = "462134385.538742"
+            timestampString = "462215330.526435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-setupImage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DMImagePicker/DMImagePicker.m"
-            timestampString = "462134212.790437"
+            timestampString = "462215330.526435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
             landmarkName = "-snapStillImage:"
             landmarkType = "5">
          </BreakpointContent>
