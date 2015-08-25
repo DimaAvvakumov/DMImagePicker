@@ -472,6 +472,7 @@
 				1811158B1B8CD72E000A0980 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18FA2E331B8AEE0800030821 /* Build configuration list for PBXProject "DMImagePicker" */ = {
 			isa = XCConfigurationList;
