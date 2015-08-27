@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DMImagePicker/DMImagePicker.m"
-            timestampString = "462215330.526435"
+            timestampString = "462356620.721291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
             landmarkName = "-snapStillImage:"
             landmarkType = "5">
          </BreakpointContent>

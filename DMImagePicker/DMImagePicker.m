@@ -20,29 +20,8 @@ static void * RecordingContext = &RecordingContext;
 static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDeviceAuthorizedContext;
 
 UIImage* DMImagePickerImageRotate(UIImage* image) {
-    
-    // CGSize size = CGSizeMake(image.size.height, image.size.width);
-    UIImageOrientation orientation = image.imageOrientation;
     CGSize size = CGSizeMake(image.size.width, image.size.height);
     UIGraphicsBeginImageContext(size);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-//    CGContextTranslateCTM( context, 0.5f * image.size.height, 0.5f * image.size.width ) ;
-//    
-//    if (orientation == UIImageOrientationRight) {
-//        CGContextRotateCTM (context, - M_PI_2);
-//    } else if (orientation == UIImageOrientationLeft) {
-//        CGContextRotateCTM (context, M_PI_2);
-//    } else if (orientation == UIImageOrientationDown) {
-//        return image;
-//    } else if (orientation == UIImageOrientationUp) {
-//        CGContextRotateCTM (context, M_PI);
-//    }
-//
-//    CGContextTranslateCTM( context, - 0.5f * image.size.width, - 0.5f * image.size.height ) ;
-    
-    // CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
     
     [image drawAtPoint:CGPointMake(0, 0)];
     
@@ -50,34 +29,7 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
     UIGraphicsEndImageContext();
 
     return rotatedImage;
-    
-//    UIGraphicsBeginImageContext(src.size);
-//    
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    
-//    CGContextTranslateCTM( context, 0.5f * src.size.width, 0.5f * src.size.height ) ;
-//    
-//    if (orientation == UIImageOrientationRight) {
-//        CGContextRotateCTM (context, - 0.1 * M_PI_2);
-//    } else if (orientation == UIImageOrientationLeft) {
-//        CGContextRotateCTM (context, 0.1 * M_PI_2);
-//    } else if (orientation == UIImageOrientationDown) {
-//        // NOTHING
-//    } else if (orientation == UIImageOrientationUp) {
-//        CGContextRotateCTM (context, 0.1 * M_PI);
-//    }
-//    
-//    CGContextDrawImage(context, CGRectMake(0.0, 0.0, src.size.width, src.size.height), src.CGImage);
-//    
-//    CGContextTranslateCTM( context, - 0.5f * src.size.width, - 0.5f * src.size.height ) ;
-//    
-//    // [src drawAtPoint:CGPointMake(0, 0)];
-//    
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    return image;
 }
-
 
 @interface DMImagePicker() <AVCaptureFileOutputRecordingDelegate>
 
@@ -101,6 +53,8 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
 @property (nonatomic) BOOL lockInterfaceRotation;
 @property (nonatomic) id runtimeErrorHandlingObserver;
 
+// Runtime
+@property (nonatomic, assign) UIInterfaceOrientation interfaceOrientation;
 
 @end
 
@@ -145,7 +99,7 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
 }
 
 - (void)initController {
-    
+    self.interfaceOrientation = UIInterfaceOrientationPortrait;
 }
 
 - (void)dealloc {
@@ -162,6 +116,9 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
 
 - (void)updateUIWithOrientation: (UIInterfaceOrientation) interfaceOrientation animated:(BOOL)animated {
     if (interfaceOrientation == UIInterfaceOrientationUnknown) return;
+    if (interfaceOrientation > 4) return;
+    
+    self.interfaceOrientation = interfaceOrientation;
     
     CGAffineTransform transform = CGAffineTransformIdentity;
     if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
@@ -279,8 +236,12 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    [currentDevice beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceChangeOrientation:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
+    
+    // update interface buttons
+    [self updateUIWithOrientation:(UIInterfaceOrientation)currentDevice.orientation animated:YES];
     
     dispatch_async([self sessionQueue], ^{
         [self addObserver:self forKeyPath:@"sessionRunningAndDeviceAuthorized" options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context:SessionRunningAndDeviceAuthorizedContext];
@@ -326,12 +287,13 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
 
 - (BOOL)shouldAutorotate {
     // Disable autorotation of the interface when recording is in progress.
-    return NO;
+    return YES;
     return ![self lockInterfaceRotation];
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationMaskPortrait;
+    // return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -486,7 +448,8 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
     
     dispatch_async([self sessionQueue], ^{
         // Update the orientation on the still image output video connection before capturing.
-        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+        // UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+        UIDeviceOrientation orientation = (UIDeviceOrientation) self.interfaceOrientation;
         
         // [[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:[[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation]];
         [[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:(AVCaptureVideoOrientation)orientation];
