@@ -140,12 +140,14 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
         CGFloat w, h;
         CGFloat wrapper_w = self.previewWrapper.bounds.size.width;
         CGFloat wrapper_h = self.previewWrapper.bounds.size.height;
-        CGFloat previewRatio = wrapper_w / wrapper_h;
-        if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
-            previewRatio = self.previewWrapper.bounds.size.height / self.previewWrapper.bounds.size.width;
+        
+        BOOL isInvert = UIInterfaceOrientationIsLandscape(interfaceOrientation);
+        if (isInvert) {
+            wrapper_w = self.previewWrapper.bounds.size.height;
+            wrapper_h = self.previewWrapper.bounds.size.width;
         }
         
-        
+        CGFloat previewRatio = wrapper_w / wrapper_h;
         
         if (self.aspectRatio > previewRatio) {
             w = wrapper_w;
@@ -153,6 +155,12 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
         } else {
             h = wrapper_h;
             w = self.aspectRatio * h;
+        }
+        
+        if (isInvert) {
+            CGFloat t = w;
+            w = h;
+            h = t;
         }
         
         self.previewWidthConstraint.constant = w;
