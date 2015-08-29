@@ -7,7 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMImagePicker">
             <connections>
                 <outlet property="cancelButton" destination="0sp-hJ-KzO" id="WHc-sG-Cfc"/>
+                <outlet property="previewHeightConstraint" destination="Btm-nQ-yAC" id="5na-Ud-9f9"/>
                 <outlet property="previewView" destination="gfa-a6-EQn" id="Il9-V9-1fL"/>
+                <outlet property="previewWidthConstraint" destination="KTr-q2-vAf" id="Em1-PJ-N1X"/>
+                <outlet property="previewWrapper" destination="YsS-Wl-dMc" id="rUD-bt-xJF"/>
                 <outlet property="shotButton" destination="9ab-x1-7qi" id="lS7-V9-mjH"/>
                 <outlet property="swapButton" destination="lrQ-NG-8gn" id="LC2-Fw-Z2o"/>
                 <outlet property="view" destination="xGc-aC-G9J" id="if9-tg-3uZ"/>
@@ -38,12 +41,26 @@
                         <constraint firstAttribute="height" constant="40" id="dDQ-1G-WTn"/>
                     </constraints>
                 </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfa-a6-EQn" userLabel="View - Preview" customClass="DMImagePickerPreviewView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsS-Wl-dMc" userLabel="View - Preview wrapper">
                     <rect key="frame" x="0.0" y="40" width="320" height="464"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="Ddl-0y-1Qg" appends="YES" id="Ais-Hw-KMG"/>
-                    </connections>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfa-a6-EQn" userLabel="View - Preview" customClass="DMImagePickerPreviewView">
+                            <rect key="frame" x="0.0" y="112" width="320" height="240"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="240" id="Btm-nQ-yAC"/>
+                                <constraint firstAttribute="width" constant="320" id="KTr-q2-vAf"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Ddl-0y-1Qg" appends="YES" id="Ais-Hw-KMG"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="gfa-a6-EQn" secondAttribute="centerX" id="6Lz-hE-Mwt"/>
+                        <constraint firstAttribute="centerY" secondItem="gfa-a6-EQn" secondAttribute="centerY" id="MbE-x0-Huh"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaY-as-6E2" userLabel="View - Bottom panel">
                     <rect key="frame" x="0.0" y="504" width="320" height="64"/>
@@ -92,15 +109,15 @@
             <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="GaY-as-6E2" secondAttribute="bottom" id="3yc-Fs-Ift"/>
-                <constraint firstItem="gfa-a6-EQn" firstAttribute="leading" secondItem="xGc-aC-G9J" secondAttribute="leading" id="5EU-9x-ckq"/>
+                <constraint firstItem="GaY-as-6E2" firstAttribute="top" secondItem="YsS-Wl-dMc" secondAttribute="bottom" id="9eI-tO-HOr"/>
+                <constraint firstItem="YsS-Wl-dMc" firstAttribute="leading" secondItem="xGc-aC-G9J" secondAttribute="leading" id="CeA-rF-78h"/>
                 <constraint firstItem="8cL-94-rEh" firstAttribute="leading" secondItem="xGc-aC-G9J" secondAttribute="leading" id="Csj-Ea-FXO"/>
-                <constraint firstItem="GaY-as-6E2" firstAttribute="top" secondItem="gfa-a6-EQn" secondAttribute="bottom" id="HLv-cW-xpg"/>
-                <constraint firstItem="gfa-a6-EQn" firstAttribute="top" secondItem="8cL-94-rEh" secondAttribute="bottom" id="Ie1-YP-KSb"/>
                 <constraint firstAttribute="trailing" secondItem="8cL-94-rEh" secondAttribute="trailing" id="UT5-NO-RXj"/>
-                <constraint firstAttribute="trailing" secondItem="gfa-a6-EQn" secondAttribute="trailing" id="cRU-yE-vbJ"/>
+                <constraint firstItem="YsS-Wl-dMc" firstAttribute="top" secondItem="8cL-94-rEh" secondAttribute="bottom" id="fLL-bh-ab1"/>
                 <constraint firstAttribute="trailing" secondItem="GaY-as-6E2" secondAttribute="trailing" id="kK1-HV-I5f"/>
                 <constraint firstItem="8cL-94-rEh" firstAttribute="top" secondItem="xGc-aC-G9J" secondAttribute="top" id="mZW-Oi-GVr"/>
                 <constraint firstItem="GaY-as-6E2" firstAttribute="leading" secondItem="xGc-aC-G9J" secondAttribute="leading" id="tNm-Yn-Ogx"/>
+                <constraint firstAttribute="trailing" secondItem="YsS-Wl-dMc" secondAttribute="trailing" id="thz-XG-mTN"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

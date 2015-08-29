@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1826D9FB1B9202690014728F /* DMImageEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E6D1B8B1C3300030821 /* DMImageEditViewController.xib */; };
+		1826D9FC1B9202690014728F /* DMImagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E651B8AFBCD00030821 /* DMImagePicker.xib */; };
 		18FA2E3E1B8AEE0800030821 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E3D1B8AEE0800030821 /* main.m */; };
 		18FA2E411B8AEE0800030821 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E401B8AEE0800030821 /* AppDelegate.m */; };
 		18FA2E441B8AEE0800030821 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E431B8AEE0800030821 /* ViewController.m */; };
@@ -210,6 +212,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1826D9FB1B9202690014728F /* DMImageEditViewController.xib in Resources */,
+				1826D9FC1B9202690014728F /* DMImagePicker.xib in Resources */,
 				18FA2E471B8AEE0800030821 /* Main.storyboard in Resources */,
 				18FA2E4C1B8AEE0800030821 /* LaunchScreen.xib in Resources */,
 				18FA2E491B8AEE0800030821 /* Images.xcassets in Resources */,

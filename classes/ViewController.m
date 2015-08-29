@@ -29,6 +29,7 @@
 - (IBAction)takePhoto:(UIButton*)sender {
     
     DMImagePicker *imagePicker = [[DMImagePicker alloc] init];
+    imagePicker.aspectRatio = 2.0;
     imagePicker.delegate = self;
     [self presentViewController:imagePicker animated:YES completion:nil];
     

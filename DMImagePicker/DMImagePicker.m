@@ -33,8 +33,13 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
 
 @interface DMImagePicker() <AVCaptureFileOutputRecordingDelegate>
 
+// preview
+@property (weak, nonatomic) IBOutlet UIView *previewWrapper;
 @property (weak, nonatomic) IBOutlet DMImagePickerPreviewView *previewView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *previewWidthConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *previewHeightConstraint;
 
+// buttons
 @property (nonatomic, weak) IBOutlet UIButton *shotButton;
 @property (nonatomic, weak) IBOutlet UIButton *swapButton;
 @property (nonatomic, weak) IBOutlet UIButton *cancelButton;
@@ -129,14 +134,46 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
         transform = CGAffineTransformMakeRotation(M_PI);
     }
     
+    // update preview screen
+    if (self.aspectRatio > 0) {
+        // preview ratio
+        CGFloat w, h;
+        CGFloat wrapper_w = self.previewWrapper.bounds.size.width;
+        CGFloat wrapper_h = self.previewWrapper.bounds.size.height;
+        CGFloat previewRatio = wrapper_w / wrapper_h;
+        if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
+            previewRatio = self.previewWrapper.bounds.size.height / self.previewWrapper.bounds.size.width;
+        }
+        
+        
+        
+        if (self.aspectRatio > previewRatio) {
+            w = wrapper_w;
+            h = roundf(w / self.aspectRatio);
+        } else {
+            h = wrapper_h;
+            w = self.aspectRatio * h;
+        }
+        
+        self.previewWidthConstraint.constant = w;
+        self.previewHeightConstraint.constant = h;
+    } else {
+        self.previewWidthConstraint.constant = self.previewWrapper.bounds.size.width;
+        self.previewHeightConstraint.constant = self.previewWrapper.bounds.size.height;
+    }
+    
     if (animated) {
         [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
             self.cancelButton.transform = transform;
             self.swapButton.transform = transform;
+            
+            [self.previewView layoutIfNeeded];
         } completion:nil];
     } else {
         self.cancelButton.transform = transform;
         self.swapButton.transform = transform;
+        
+        [self.previewView layoutIfNeeded];
     }
     
 }
@@ -240,9 +277,6 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
     [currentDevice beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceChangeOrientation:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
     
-    // update interface buttons
-    [self updateUIWithOrientation:(UIInterfaceOrientation)currentDevice.orientation animated:YES];
-    
     dispatch_async([self sessionQueue], ^{
         [self addObserver:self forKeyPath:@"sessionRunningAndDeviceAuthorized" options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context:SessionRunningAndDeviceAuthorizedContext];
         [self addObserver:self forKeyPath:@"stillImageOutput.capturingStillImage" options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context:CapturingStillImageContext];
@@ -260,6 +294,16 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
         }]];
         [[self session] startRunning];
     });
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    
+    // update interface buttons
+    [self updateUIWithOrientation:(UIInterfaceOrientation)currentDevice.orientation animated:YES];
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

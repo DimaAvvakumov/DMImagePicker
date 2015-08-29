@@ -22,4 +22,6 @@
 
 @property (weak, nonatomic) id<DMImagePickerDelegate> delegate;
 
+@property (assign, nonatomic) CGFloat aspectRatio;
+
 @end
