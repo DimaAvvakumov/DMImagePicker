@@ -45,7 +45,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     NSLog(@"image: %@", image);
-    NSLog(@"image orient: %d", image.imageOrientation);
 }
 
 @end

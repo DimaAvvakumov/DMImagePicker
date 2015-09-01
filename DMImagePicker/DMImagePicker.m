@@ -19,11 +19,28 @@ static void * CapturingStillImageContext = &CapturingStillImageContext;
 static void * RecordingContext = &RecordingContext;
 static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDeviceAuthorizedContext;
 
-UIImage* DMImagePickerImageRotate(UIImage* image) {
-    CGSize size = CGSizeMake(image.size.width, image.size.height);
-    UIGraphicsBeginImageContext(size);
+UIImage* DMImagePickerImageRotate(UIImage* image, CGFloat ratio) {
+    CGSize originalImageSize = CGSizeMake(image.size.width, image.size.height);
+    CGSize imageSize = originalImageSize;
+    CGPoint imageOffset = CGPointZero;
+    if (ratio != 0) {
+        CGFloat imageRatio = originalImageSize.width / originalImageSize.height;
+        if (imageRatio < ratio) {
+            CGFloat newHeight = originalImageSize.width / ratio;
+            
+            imageSize.height = newHeight;
+            imageOffset.y = roundf((newHeight - originalImageSize.height) / 2.0);
+        } else {
+            CGFloat newWidth = originalImageSize.height * ratio;
+            
+            imageSize.width = newWidth;
+            imageOffset.x = roundf((newWidth - originalImageSize.width) / 2.0);
+        }
+    }
     
-    [image drawAtPoint:CGPointMake(0, 0)];
+    UIGraphicsBeginImageContext(imageSize);
+    
+    [image drawAtPoint:CGPointMake(imageOffset.x, imageOffset.y)];
     
     UIImage *rotatedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -518,7 +535,7 @@ UIImage* DMImagePickerImageRotate(UIImage* image) {
                 
                 NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
-                UIImage *rotadedImage = DMImagePickerImageRotate(image);
+                UIImage *rotadedImage = DMImagePickerImageRotate(image, self.aspectRatio);
                 
                 [strongSelf afterSnapStillImage:rotadedImage];
             }
