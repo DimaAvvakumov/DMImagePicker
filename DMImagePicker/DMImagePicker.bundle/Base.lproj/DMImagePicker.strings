@@ -1,0 +1,14 @@
+/*
+ Localizable.strings
+ DMImagePicker
+ 
+ Created by Avvakumov Dmitry on 02.09.15.
+ Copyright (c) 2015 Dmitry Avvakumov. All rights reserved.
+ */
+
+"swap" = "swap";
+"cancel" = "cancel";
+
+"retake" = "retake";
+"rotate" = "rotate";
+"done" = "done";

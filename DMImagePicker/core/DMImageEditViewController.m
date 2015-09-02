@@ -8,6 +8,8 @@
 
 #import "DMImageEditViewController.h"
 
+#import "DMImagePicker.h"
+
 #define DMImageEditViewController_MaxScale 2.0
 
 @interface DMImageEditViewController () {
@@ -20,6 +22,10 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *retakeButton;
+@property (weak, nonatomic) IBOutlet UIButton *rotateButton;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
 @property (assign, nonatomic) CGSize storeImageSize;
 
@@ -85,6 +91,8 @@
     
     [self buildView];
     
+    [self setupLocalization];
+    
     [self recalculateScale];
     [self resetScaleAnimated:NO];
 }
@@ -119,6 +127,14 @@
 
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
+}
+
+#pragma mark - Localization
+
+- (void) setupLocalization {
+    [self.retakeButton setTitle:DMImagePickerLocalizedStrings(@"retake") forState:UIControlStateNormal];
+    [self.rotateButton setTitle:DMImagePickerLocalizedStrings(@"rotate") forState:UIControlStateNormal];
+    [self.doneButton setTitle:DMImagePickerLocalizedStrings(@"done") forState:UIControlStateNormal];
 }
 
 #pragma mark - Build view

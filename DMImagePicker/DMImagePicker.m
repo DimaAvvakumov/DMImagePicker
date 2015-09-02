@@ -218,6 +218,9 @@ UIImage* DMImagePickerImageRotate(UIImage* image, CGFloat ratio) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Localization
+    [self setupLocalization];
+    
     // Create the AVCaptureSession
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
     [self setSession:session];
@@ -423,7 +426,14 @@ UIImage* DMImagePickerImageRotate(UIImage* image, CGFloat ratio) {
     }
 }
 
-#pragma mark Actions
+#pragma mark - Localization
+
+- (void) setupLocalization {
+    [self.swapButton setTitle:DMImagePickerLocalizedStrings(@"swap") forState:UIControlStateNormal];
+    [self.cancelButton setTitle:DMImagePickerLocalizedStrings(@"cancel") forState:UIControlStateNormal];
+}
+
+#pragma mark - Actions
 
 - (IBAction)toggleMovieRecording:(id)sender
 {

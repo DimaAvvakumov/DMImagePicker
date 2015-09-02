@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182283191B96D49200596C87 /* DMImagePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 182283181B96D49200596C87 /* DMImagePicker.bundle */; };
+		182283231B96D64A00596C87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182283211B96D64A00596C87 /* LaunchScreen.xib */; };
+		182283241B96D64A00596C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182283221B96D64A00596C87 /* Main.storyboard */; };
 		1826D9FB1B9202690014728F /* DMImageEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E6D1B8B1C3300030821 /* DMImageEditViewController.xib */; };
 		1826D9FC1B9202690014728F /* DMImagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E651B8AFBCD00030821 /* DMImagePicker.xib */; };
 		18FA2E3E1B8AEE0800030821 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E3D1B8AEE0800030821 /* main.m */; };
 		18FA2E411B8AEE0800030821 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E401B8AEE0800030821 /* AppDelegate.m */; };
 		18FA2E441B8AEE0800030821 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E431B8AEE0800030821 /* ViewController.m */; };
-		18FA2E471B8AEE0800030821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E451B8AEE0800030821 /* Main.storyboard */; };
 		18FA2E491B8AEE0800030821 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E481B8AEE0800030821 /* Images.xcassets */; };
-		18FA2E4C1B8AEE0800030821 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA2E4A1B8AEE0800030821 /* LaunchScreen.xib */; };
 		18FA2E641B8AEE5B00030821 /* DMImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E631B8AEE5B00030821 /* DMImagePicker.m */; };
 		18FA2E6A1B8AFC1E00030821 /* DMImagePickerPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E691B8AFC1E00030821 /* DMImagePickerPreviewView.m */; };
 		18FA2E6E1B8B1C3300030821 /* DMImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA2E6C1B8B1C3300030821 /* DMImageEditViewController.m */; };
@@ -22,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		181115881B8CD72E000A0980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		182283141B96D34F00596C87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		182283181B96D49200596C87 /* DMImagePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DMImagePicker.bundle; sourceTree = "<group>"; };
+		182283211B96D64A00596C87 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		182283221B96D64A00596C87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18FA2E381B8AEE0800030821 /* DMImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FA2E3C1B8AEE0800030821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18FA2E3D1B8AEE0800030821 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -29,9 +34,7 @@
 		18FA2E401B8AEE0800030821 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18FA2E421B8AEE0800030821 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		18FA2E431B8AEE0800030821 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		18FA2E461B8AEE0800030821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18FA2E481B8AEE0800030821 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		18FA2E4B1B8AEE0800030821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		18FA2E561B8AEE0800030821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18FA2E571B8AEE0800030821 /* DMImagePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMImagePickerTests.m; sourceTree = "<group>"; };
 		18FA2E621B8AEE5B00030821 /* DMImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMImagePicker.h; sourceTree = "<group>"; };
@@ -71,6 +74,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		182283121B96D34F00596C87 /* DMImagePickerBundle */ = {
+			isa = PBXGroup;
+			children = (
+				182283131B96D34F00596C87 /* Supporting Files */,
+			);
+			path = DMImagePickerBundle;
+			sourceTree = "<group>";
+		};
+		182283131B96D34F00596C87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				182283141B96D34F00596C87 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		182283201B96D64A00596C87 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				182283211B96D64A00596C87 /* LaunchScreen.xib */,
+				182283221B96D64A00596C87 /* Main.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
 		18FA2E2F1B8AEE0800030821 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +106,7 @@
 				18FA2E3A1B8AEE0800030821 /* classes */,
 				18FA2E541B8AEE0800030821 /* DMImagePickerTests */,
 				181115861B8CD72E000A0980 /* DMImagePickerBundle */,
+				182283121B96D34F00596C87 /* DMImagePickerBundle */,
 				18FA2E391B8AEE0800030821 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,13 +122,12 @@
 		18FA2E3A1B8AEE0800030821 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				182283201B96D64A00596C87 /* storyboard */,
 				18FA2E3F1B8AEE0800030821 /* AppDelegate.h */,
 				18FA2E401B8AEE0800030821 /* AppDelegate.m */,
 				18FA2E421B8AEE0800030821 /* ViewController.h */,
 				18FA2E431B8AEE0800030821 /* ViewController.m */,
-				18FA2E451B8AEE0800030821 /* Main.storyboard */,
 				18FA2E481B8AEE0800030821 /* Images.xcassets */,
-				18FA2E4A1B8AEE0800030821 /* LaunchScreen.xib */,
 				18FA2E3B1B8AEE0800030821 /* Supporting Files */,
 			);
 			path = classes;
@@ -135,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				18FA2E671B8AFC0700030821 /* core */,
+				182283181B96D49200596C87 /* DMImagePicker.bundle */,
 				18FA2E621B8AEE5B00030821 /* DMImagePicker.h */,
 				18FA2E631B8AEE5B00030821 /* DMImagePicker.m */,
 				18FA2E651B8AFBCD00030821 /* DMImagePicker.xib */,
@@ -196,6 +225,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 18FA2E2F1B8AEE0800030821;
 			productRefGroup = 18FA2E391B8AEE0800030821 /* Products */;
@@ -214,8 +244,9 @@
 			files = (
 				1826D9FB1B9202690014728F /* DMImageEditViewController.xib in Resources */,
 				1826D9FC1B9202690014728F /* DMImagePicker.xib in Resources */,
-				18FA2E471B8AEE0800030821 /* Main.storyboard in Resources */,
-				18FA2E4C1B8AEE0800030821 /* LaunchScreen.xib in Resources */,
+				182283191B96D49200596C87 /* DMImagePicker.bundle in Resources */,
+				182283231B96D64A00596C87 /* LaunchScreen.xib in Resources */,
+				182283241B96D64A00596C87 /* Main.storyboard in Resources */,
 				18FA2E491B8AEE0800030821 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,25 +268,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		18FA2E451B8AEE0800030821 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18FA2E461B8AEE0800030821 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		18FA2E4A1B8AEE0800030821 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18FA2E4B1B8AEE0800030821 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		18FA2E591B8AEE0800030821 /* Debug */ = {

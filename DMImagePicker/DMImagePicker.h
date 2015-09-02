@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#ifndef DMImagePickerLocalizedStrings
+#define DMImagePickerLocalizedStrings(key) \
+NSLocalizedStringFromTableInBundle(key, @"DMImagePicker", [NSBundle bundleWithPath:[[[NSBundle bundleForClass:[DMImagePicker class]] resourcePath] stringByAppendingPathComponent:@"DMImagePicker.bundle"]], nil)
+#endif
+
 @class DMImagePicker;
 @protocol DMImagePickerDelegate <NSObject>
 @optional

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMImageEditViewController">
             <connections>
+                <outlet property="doneButton" destination="Tas-HK-XwB" id="dO1-1g-Dcm"/>
                 <outlet property="imageView" destination="kvD-v0-s06" id="8Dl-Hs-hPp"/>
+                <outlet property="retakeButton" destination="C3C-fK-Mk0" id="EVQ-Lb-cSc"/>
+                <outlet property="rotateButton" destination="zQ7-4k-hOf" id="j1t-Un-vfc"/>
                 <outlet property="scrollView" destination="kGZ-x6-pvH" id="Sys-9b-onz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,8 +39,8 @@
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C3C-fK-Mk0">
-                            <rect key="frame" x="10" y="8" width="45" height="29"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C3C-fK-Mk0">
+                            <rect key="frame" x="10" y="8" width="70" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Retake">
@@ -47,7 +51,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zQ7-4k-hOf">
-                            <rect key="frame" x="135" y="8" width="50" height="29"/>
+                            <rect key="frame" x="125" y="8" width="70" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Rotate">
@@ -57,8 +61,8 @@
                                 <action selector="rotateAction:" destination="-1" eventType="touchUpInside" id="fE2-KA-n8c"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tas-HK-XwB" userLabel="Done">
-                            <rect key="frame" x="265" y="8" width="45" height="29"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tas-HK-XwB" userLabel="Done">
+                            <rect key="frame" x="250" y="8" width="60" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Done">
