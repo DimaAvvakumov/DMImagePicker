@@ -717,6 +717,7 @@ UIImage* DMImagePickerImageRotate(UIImage* image, CGFloat ratio) {
                                   cancelButtonTitle:@"OK"
                                   otherButtonTitles:nil] show];
                 [self setDeviceAuthorized:NO];
+                [self cancelAction:nil];
             });
         }
     }];
