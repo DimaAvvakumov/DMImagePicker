@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DMImagePicker"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "Custom image picker for ios."
   s.homepage     = "https://github.com/DimaAvvakumov/DMPopupAlert"
   s.license      = { :type => "MIT", :file => "LICENSE" }
